@@ -36,6 +36,30 @@
         </developer>
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>2624322-release-6F6h6R</id>
+            <url>https://packages.aliyun.com/6927b116e6c3e0425dbdf60d/maven/2624322-release-6f6h6r</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <snapshotRepository>
+            <id>2624322-snapshot-3EoOv3</id>
+            <url>https://packages.aliyun.com/6927b116e6c3e0425dbdf60d/maven/2624322-snapshot-3eoov3</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
+
     <properties>
         <java.version>1.8</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
@@ -282,7 +306,6 @@
                         <charset>${project.build.sourceEncoding}</charset>
                         <encoding>${project.build.sourceEncoding}</encoding>
                         <docencoding>${project.build.sourceEncoding}</docencoding>
-                        <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
                         <failOnError>false</failOnError>
                     </configuration>
                     <executions>
