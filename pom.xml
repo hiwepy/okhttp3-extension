@@ -5,7 +5,7 @@
 
     <groupId>io.github.hiwepy</groupId>
     <artifactId>okhttp3-extension</artifactId>
-    <version>1.0.x-20260629-SNAPSHOT</version>
+    <version>3.0.x-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>OkHttp3 Extensions - SSL, Interceptor, Cookie and more</description>
@@ -61,7 +61,7 @@
     </distributionManagement>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>21</java.version>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -89,6 +89,8 @@
         <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-central-publishing-plugin.version>0.10.0</maven-central-publishing-plugin.version>
+        <caffeine.version>2.9.3</caffeine.version>
+        <checker-qual.version>3.48.3</checker-qual.version>
     </properties>
 
     <dependencyManagement>
@@ -101,6 +103,21 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+        <!-- Caffeine Cache -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
+        </dependency>
+
+        <!-- Checker Framework (for nullness annotations) -->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>${checker-qual.version}</version>
+            <scope>provided</scope>
+        </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -134,6 +151,21 @@
             <scope>provided</scope>
         </dependency>
 
+
+        <!-- Caffeine Cache -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>${caffeine.version}</version>
+        </dependency>
+
+        <!-- Checker Framework (for nullness annotations) -->
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>${checker-qual.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -410,6 +442,8 @@
             </activation>
             <properties>
                 <additionalparam>-Xdoclint:none -Xlint:unchecked</additionalparam>
+        <caffeine.version>2.9.3</caffeine.version>
+        <checker-qual.version>3.48.3</checker-qual.version>
             </properties>
         </profile>
         <profile>
